@@ -1,4 +1,4 @@
-  <?php include("topbit.php") ?>
+  <?php include("topbit.php");
 
     $find_sql = "SELECT * FROM `L2_prac_game_details`";
     $find_query = mysqli_query($dbconnect, $find_sql);
@@ -29,20 +29,25 @@
 
             else {
                 do
-                }
+                {
 
                     ?>
             
             <!-- Results go here -->
             <div class="results">
-                You have results! 
+                <span class="sub_heading">
+                <?php echo $find_rs['Name']; ?>
+                </span>
             </div> <!-- / results -->
+            
+            <br />
             
             <?php
             
                 } // end results 'do'
             
-            
+                while
+                    ($find_rs=mysqli_fetch_assoc($find_query));
             
             } // end else
             
