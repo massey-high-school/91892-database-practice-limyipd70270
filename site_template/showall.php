@@ -1,6 +1,9 @@
   <?php include("topbit.php");
 
-    $find_sql = "SELECT * FROM `L2_prac_game_details`";
+    $find_sql = "SELECT * FROM `L2_prac_game_details` 
+    JOIN `L2_prac_genre` ON (`L2_prac_game_details`.`Genre ID` = `L2_prac_genre`.`Genre ID`)
+    JOIN `L2_prac_developer` on (`L2_prac_game_details`.`Developer ID` = `L2_prac_developer`.`Developer ID`)
+    ";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -36,8 +39,28 @@
             <!-- Results go here -->
             <div class="results">
                 <span class="sub_heading">
-                <?php echo $find_rs['Name']; ?>
-                </span>
+                    <a href="<?php echo $find_rs['URL']; ?>">
+                        <?php echo $find_rs['Name']; ?>
+                    </a>
+                </span> - <?php echo $find_rs['Subtitle'] ?>
+                
+                <p>
+                    <b>Genre</b>:
+                    <?php echo $find_rs['Genre Name'] ?>
+                    
+                    <br />
+                    
+                    <b>Developer</b>:
+                    <?php echo $find_rs['Developer Name'] ?>
+                    
+                    <br />
+                    <b>Rating</b>:  <?php echo $find_rs['User Rating'] 
+                    ?> (based on <?php echo $find_rs['Rating Count'] ?> votes)
+                        
+                </p>
+                
+                
+                
             </div> <!-- / results -->
             
             <br />
