@@ -58,6 +58,8 @@
                     ?> (based on <?php echo $find_rs['Rating Count'] ?> votes)
                         
                 </p>
+                <hr />
+                <?php echo $find_rs['Description'] ?>
                 
                 
                 
