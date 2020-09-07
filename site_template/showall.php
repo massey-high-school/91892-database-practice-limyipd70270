@@ -38,30 +38,66 @@
             
             <!-- Results go here -->
             <div class="results">
-                <span class="sub_heading">
-                    <a href="<?php echo $find_rs['URL']; ?>">
-                        <?php echo $find_rs['Name']; ?>
-                    </a>
-                </span> - <?php echo $find_rs['Subtitle'] ?>
                 
-                <p>
-                    <b>Genre</b>:
-                    <?php echo $find_rs['Genre Name'] ?>
+                <!-- / Heading and subtitle -->
+                
+                <div class="flex-container">
+                    <div>
+                        <span class="sub_heading">
+                            <a href="<?php echo $find_rs['URL']; ?>">
+                                <?php echo $find_rs['Name']; ?>
+                            </a>
+                        </span>
+                    </div>  <!-- / Title -->
                     
-                    <br />
-                    
-                    <b>Developer</b>:
-                    <?php echo $find_rs['Developer Name'] ?>
-                    
-                    <br />
-                    <b>Rating</b>:  <?php echo $find_rs['User Rating'] 
-                    ?> (based on <?php echo $find_rs['Rating Count'] ?> votes)
+                    <?php
+                        if($find_rs['Subtitle'] != "")
+                            
+                        {
                         
-                </p>
-                <hr />
-                <?php echo $find_rs['Description'] ?>
+                        ?>
+                    <div>
+                    
+                        &nbsp; &nbsp; | &nbsp; &nbsp; 
+                    
+                    </div>  <!-- / subtitle -->
+                    
+                    <?php
+                           
+                        }
+                    ?>
+                    
+                        
+                </div>
+                <!-- / Heading and subtitle -->    
                 
+                <!-- Price -->
                 
+                <?php
+                    
+                    if($find_rs['Price'] == 0) {                    
+                        ?>
+                    <p>
+                        Free 
+                          <?php(In App Purchase)
+                
+                    </p>
+                
+                    <?php
+                    } // end price if
+                    
+                    else {
+                        
+                      ?>
+                    <b>Price:</b> $<?php echo $find_rs['Price'] ?>
+                
+                    <?php
+                        
+                    }  // end price else (display cost)
+                    
+                ?>
+                
+                <!-- Price -->
                 
             </div> <!-- / results -->
             
