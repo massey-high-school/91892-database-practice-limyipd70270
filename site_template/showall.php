@@ -71,6 +71,25 @@
                 </div>
                 <!-- / Heading and subtitle -->    
                 
+                <!-- Ratings Area -->
+                
+                <div class="flex-container">
+                    
+                    <!-- Partial Stars Original Source: https://codepen.io/Bluetidepro/pen/GkpEa -->
+                    <div class="star-ratings-sprite">
+                        <span style="width:<?php echo $find_rs['User Rating'] / 5 * 100; ?> %" class="star-ratings-sprite-rating"></span>
+
+                    </div> <!-- / star rating div -->
+
+                    <div class="actual-rating">
+                        (<?php echo $find_rs['User Rating'] ?> based on <?php echo number_format($find_rs['Rating Count']) ?> ratings)
+
+                    </div> <!-- / text rating div -->
+                
+                </div> <!-- / ratings flexbox -->
+            
+                <!--- / Ratings Area -->
+                
                 <!-- Price -->
                 
                 <?php
@@ -79,7 +98,16 @@
                         ?>
                     <p>
                         Free 
-                          <?php(In App Purchase)
+                        <?php
+                            if($find_rs['In App'] == 1)
+                            {
+                                ?>
+                                    (In App Purchase)
+                                <?php
+                                
+                            } // end In App if
+                        ?>
+                        
                 
                     </p>
                 
