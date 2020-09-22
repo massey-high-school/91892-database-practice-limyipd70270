@@ -35,7 +35,7 @@
                 
             <select class="search adv" name="genre">
                 
-            <option value="" disabled selected>Genre...</option>
+            <option value=""  selected>Genre...</option>
                 
             <!-- get options from database -->
             <?php
@@ -76,13 +76,13 @@
             <!-- Rating -->
             <div class="flex-container">
                 
-                <div class="adv-txt"
+                <div class="adv-txt">
                      Rating:
                 </div> <!-- / rating label --> 
                 
                 <div>
                     <select class="search adv" name="rate_more_less">
-                        <option value="" disabled>Choose...</option>
+                        <option value="" >Choose...</option>
                         <option value="at least">At Least</option>
                         <option value="at most">At Most</option>
                         </select>
