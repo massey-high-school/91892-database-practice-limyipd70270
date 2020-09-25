@@ -28,17 +28,16 @@
         $rating_more_less = mysqli_real_escape_string($dbconnect, $_POST['rate_more_less']);
         $rating = mysqli_real_escape_string($dbconnect, $_POST['rating']);
 
-        if ($rating_more_less == "at least") {
-            $rate_op = ">=";
-        }
-
+        if ($rating == "") {$rating = 0;
+                            $rating_more_less == "at least";}
+         
         elseif($rating_more_less == "at most") {
             $rate_op = "<=";
         }
 
         else {
             $rate_op = ">=";
-            $rating = 0;
+            
 
         } // end rating if / elseif / else
 
@@ -79,7 +78,7 @@
         ?>
 
         <div class="box main">
-            <h2>Name / Developer Results</h2>
+            <h2>Advanced Search Results</h2>
             
             <?php
             include ("results.php")
